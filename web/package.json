@@ -10,7 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "next": "14.2.5",
+    "antd": "^5.20.0",
+    "next": "13.2.4",
     "next-test-api-route-handler": "^4.0.8",
     "react": "^18",
     "react-dom": "^18"

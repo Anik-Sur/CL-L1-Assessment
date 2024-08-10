@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "role": "admin"
+  },
+  {
+    "id": "2",
+    "role": "staff"
+  },
+  {
+    "id": "3",
+    "role": "staff"
+  },
+  {
+    "id": "4",
+    "role": "staff",
+    "project": {
+      "projectId": "project1",
+      "projectRole": "approver"
+    }
+  }
+]
