@@ -123,6 +123,11 @@ export function createTask(title: string, description: string, group: number, as
         tasks.push({
             id: Task.idCounter, title, description, group, assignedTo, projectId, status: "pending"
         })
+        const task = getTaskById(Task.idCounter)
+
+        if (task && checkGroupCompletionStatus(task.group - 1, projectId)) {
+            setTasksActiveForGroup(task.group, projectId)
+        }
         Task.idCounter += 1;
         updateInMemory(filePath, tasks);
         return true

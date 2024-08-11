@@ -27,10 +27,10 @@ const LoginPage = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '95vh', backgroundColor: '#f0f2f5' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '94vh', backgroundColor: '#f0f2f5' }}>
             <div style={{ display: 'flex', flexDirection: 'column', width: '80%', maxWidth: '1200px', backgroundColor: 'white', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', borderRadius: '8px', overflow: 'hidden' }}>
                 <div style={{ padding: '20px', backgroundColor: '#fafafa', borderBottom: '1px solid #e8e8e8' }}>
-                    <h2 style={{ margin: 0 }}>Login Page</h2>
+                    <h2 style={{ margin: 0 }}>Login</h2>
                 </div>
                 <div style={{ display: 'flex', flex: 1 }}>
                     <div style={{ flex: 1, padding: '40px' }}>

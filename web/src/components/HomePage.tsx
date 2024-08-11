@@ -1,10 +1,11 @@
-import { Tabs, Row, Col, Button, Input } from 'antd';
+import { Tabs, Row, Col, Button, Input, Empty } from 'antd';
 import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 import { useContext, useEffect, useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { UserContext } from '@/context/UserContext';
 import { ProjectContext } from '@/context/ProjectContext';
 import NewProjectModal from './NewProjectModal';
+import { TaskContext } from '@/context/TaskContext';
 
 const { TabPane } = Tabs;
 
@@ -46,7 +47,7 @@ const HomePage = () => {
     });
 
     return (
-        <div>
+        <div >
             <NewProjectModal
                 visible={isModalVisible}
                 onCreate={handleCreate}
@@ -81,11 +82,17 @@ const HomePage = () => {
                 </Col>
             </Row>
             <Row gutter={[16, 16]}>
-                {filteredProjects?.map((project) => (
-                    <Col span={8} key={project.id}>
-                        <ProjectCard id={project.id} title={project.name} description={project.name} />
+                {filteredProjects && filteredProjects.length > 0 ? (
+                    filteredProjects.map((project) => (
+                        <Col span={6} key={project.id}>
+                            <ProjectCard id={project.id} title={project.name} />
+                        </Col>
+                    ))
+                ) : (
+                    <Col span={24} style={{ textAlign: 'center' }}>
+                        <Empty description="No Projects Found" />
                     </Col>
-                ))}
+                )}
             </Row>
         </div>
     );

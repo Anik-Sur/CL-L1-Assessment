@@ -44,7 +44,7 @@ const Navbar = () => {
     );
 
     return (
-        <Header style={{ backgroundColor: 'white', padding: 0 }}>
+        <Header style={{ backgroundColor: 'white', padding: 0, paddingLeft: 10, paddingRight: 10 }}>
             <Row justify="space-between" align="middle">
                 <Col>
                     <Breadcrumb style={{ marginLeft: '16px' }}>

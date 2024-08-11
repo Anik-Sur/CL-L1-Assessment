@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <AntLayout>
             {showNavbar && <Navbar />}
-            <Content style={{ padding: '16px', height: '91.8vh' }}>
+            <Content style={{ padding: '2.5rem', backgroundColor: '#f0f2f5', height: showNavbar ? '91.8vh' : '100vh' }}>
                 {children}
             </Content>
         </AntLayout>

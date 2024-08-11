@@ -41,4 +41,5 @@ interface TaskProviderValues {
     fetchTasks?: (projectId: string) => Promise<Task[]>;
     updateTask?: (taskId: number, projectId: string, updates: Partial<Task>) => Promise<Task[]>;
     addTask?: (projectId: string, updates: Partial<Task>) => Promise<void>;
+    fetchTasksCompletion?: (projectId: string) => Promise<{ completed: number, total: number }>;
 }
