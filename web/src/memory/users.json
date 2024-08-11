@@ -1,22 +1,18 @@
 [
   {
-    "id": "1",
+    "id": "admin",
     "role": "admin"
   },
   {
-    "id": "2",
+    "id": "c",
     "role": "staff"
   },
   {
-    "id": "3",
+    "id": "r",
     "role": "staff"
   },
   {
-    "id": "4",
-    "role": "staff",
-    "project": {
-      "projectId": "project1",
-      "projectRole": "approver"
-    }
+    "id": "a",
+    "role": "staff"
   }
 ]
