@@ -15,17 +15,18 @@ interface NewProjectModalProps {
 
 const NewProjectModal: React.FC<NewProjectModalProps> = ({ visible, onCreate, onCancel }) => {
     const [form] = Form.useForm();
-    const { fetchUsers, user } = useContext(UserContext)
-    const [users, setUsers] = useState([] as User[])
+    const { fetchUsers, user } = useContext(UserContext);
+    const [users, setUsers] = useState([] as User[]);
+
     useEffect(() => {
         const loadUsers = async () => {
             if (fetchUsers) {
-                const users = await fetchUsers()
-                setUsers(users ? users : [])
+                const users = await fetchUsers();
+                setUsers(users ? users : []);
             }
-        }
+        };
         loadUsers();
-    }, [])
+    }, [fetchUsers]);
 
     return (
         <Modal
@@ -66,8 +67,11 @@ const NewProjectModal: React.FC<NewProjectModalProps> = ({ visible, onCreate, on
                     rules={[{ required: true, message: 'Please select a contributor!' }]}
                 >
                     <Select placeholder="Select a contributor">
-                        {/* Options for contributors */}
-                        {users.map((user) => (<Option value={user.id}>{user.id}</Option>))}
+                        {users.map((user) => (
+                            <Option key={user.id} value={user.id}>
+                                {user.id}
+                            </Option>
+                        ))}
                     </Select>
                 </Form.Item>
 
@@ -77,7 +81,11 @@ const NewProjectModal: React.FC<NewProjectModalProps> = ({ visible, onCreate, on
                     rules={[{ required: true, message: 'Please select an approver!' }]}
                 >
                     <Select placeholder="Select an approver">
-                        {users.map((user) => (<Option value={user.id}>{user.id}</Option>))}
+                        {users.map((user) => (
+                            <Option key={user.id} value={user.id}>
+                                {user.id}
+                            </Option>
+                        ))}
                     </Select>
                 </Form.Item>
 
@@ -87,17 +95,23 @@ const NewProjectModal: React.FC<NewProjectModalProps> = ({ visible, onCreate, on
                     rules={[{ required: true, message: 'Please select a reviewer!' }]}
                 >
                     <Select placeholder="Select a reviewer">
-                        {users.map((user) => (<Option value={user.id}>{user.id}</Option>))}
+                        {users.map((user) => (
+                            <Option key={user.id} value={user.id}>
+                                {user.id}
+                            </Option>
+                        ))}
                     </Select>
                 </Form.Item>
 
                 <Form.Item
                     name="admin"
                     label="Admin"
-                    rules={[{ message: 'Please select a admin!' }]}
+                    rules={[{ message: 'Please select an admin!' }]}
                 >
                     <Select defaultValue={user?.id} disabled placeholder="You are selected as the admin by default">
-                        <Option selected value={user?.id}>{user?.id}</Option>
+                        <Option selected key={user?.id} value={user?.id}>
+                            {user?.id}
+                        </Option>
                     </Select>
                 </Form.Item>
             </Form>

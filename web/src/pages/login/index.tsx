@@ -3,7 +3,7 @@ import { Input, Button, Form, message } from 'antd';
 import { UserContext } from '@/context/UserContext';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import loginImage from "@/../../public/login-image.jpg"; // Replace with your image path
+import loginImage from "@/../../public/login-image.png"; // Replace with your image path
 import Link from 'next/link';
 
 const LoginPage = () => {
@@ -48,7 +48,7 @@ const LoginPage = () => {
                             </Form.Item>
                             <Form.Item style={{ textAlign: 'center' }}>
                                 <div>
-                                    <span>Don't have an account?</span>
+                                    <span>Don&apos;t have an account?</span>
                                     {' '}
                                     <Link href="/signup">
                                         <p style={{ color: '#1890ff', fontWeight: 'bold' }}>Sign Up</p>

@@ -3,7 +3,7 @@ import { Input, Button, Form, message } from 'antd';
 import { UserContext } from '@/context/UserContext';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import signupImage from "@/../../public/login-image.jpg"; // Replace with your image path
+import signupImage from "@/../../public/login-image.png"; // Replace with your image path
 import Link from 'next/link';
 
 const SignupPage = () => {
